@@ -1,0 +1,98 @@
+.icon-storage-container {
+    width: 16.6vw;
+    height: 100vh;
+    background-color: #3d002a;
+    position: absolute;
+    right: 0px;
+    border-left: 0.2vw solid #14000e;
+  
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  
+    div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1vw;
+    }
+  
+    span {
+      color: #ff9933;
+      font-size: 0.8vw;
+    }
+}
+
+.icon-storage-container::-webkit-scrollbar {
+    display: none;
+}
+  
+.hide {
+   display: none;
+   visibility: hidden;
+}
+
+  
+  
+.air, .mist, .steam, .wind {
+    filter: invert(100%) sepia(34%) saturate(0%) hue-rotate(71deg) brightness(105%) contrast(101%);
+}
+  
+.dust {
+    filter: invert(75%) sepia(30%) saturate(323%) hue-rotate(350deg) brightness(96%) contrast(91%);
+}
+  
+.earth, .mud, .earthquake {
+    filter: invert(39%) sepia(59%) saturate(447%) hue-rotate(345deg) brightness(92%) contrast(84%);
+}
+  
+.fire, .lava {
+    filter: invert(59%) sepia(51%) saturate(2525%) hue-rotate(341deg) brightness(101%) contrast(101%);
+}
+  
+.water, .puddle, .pond {
+    filter: invert(96%) sepia(100%) saturate(1216%) hue-rotate(163deg) brightness(100%) contrast(100%);
+}
+
+.continent {
+    filter: invert(54%) sepia(12%) saturate(2184%) hue-rotate(97deg) brightness(91%) contrast(80%);
+}
+
+.granite {
+    filter: invert(86%) sepia(0%) saturate(0%) hue-rotate(80deg) brightness(90%) contrast(96%);
+}
+
+.gunpowder, .stone {
+    filter: invert(16%) sepia(8%) saturate(3%) hue-rotate(349deg) brightness(100%) contrast(92%);
+}
+
+.heat {
+    filter: invert(86%) sepia(25%) saturate(6188%) hue-rotate(0deg) brightness(106%) contrast(103%);
+}
+
+.chimney {
+    filter: invert(20%) sepia(35%) saturate(6342%) hue-rotate(12deg) brightness(98%) contrast(101%);
+}
+
+.clay {
+    filter: invert(18%) sepia(78%) saturate(2532%) hue-rotate(18deg) brightness(94%) contrast(102%);
+}
+
+.energy {
+    filter: invert(87%) sepia(15%) saturate(6579%) hue-rotate(357deg) brightness(100%) contrast(107%);
+}
+
+
+.icon {
+    width: 6vw;
+    height: 6vw;
+    transition: all 0.3s ease-in-out;
+}
+
+.icon:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}

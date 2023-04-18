@@ -1,0 +1,31 @@
+.title-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3d002a;
+
+    span {
+        font-family: 'Pacifico', cursive;
+        font-size: 5vw;
+        color: #ff9933;
+    }
+
+    button {
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 1vw;
+        color: white;
+        background-color: #9999ff;
+        border-radius: 10px;
+        padding: 1vw 3vw;
+        border: none;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: #7f7fd2;
+    }
+}

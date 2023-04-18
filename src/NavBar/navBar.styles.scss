@@ -1,0 +1,43 @@
+.nav-bar-container p {
+    font-size: 0.6vw;
+}
+
+.nav-bar-container div {
+    width: 4vw;
+}
+
+.nav-bar-container {
+    align-self: flex-start;
+    padding-top: 0.5vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5vw;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+
+.i, p {
+    color: #ff9933;
+}
+  
+.i {
+    font-size: 1.5vw;
+}
+  
+.i:hover {
+    cursor: pointer;
+}
+  
+p {
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}

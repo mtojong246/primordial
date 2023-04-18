@@ -1,0 +1,27 @@
+.search-bar-container {
+    position: absolute;
+    right: 17.1vw;
+    top: 0.5vw;
+}
+  
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16vw;
+    background-color: #3d002a;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1.5vw 0;
+    gap: 1vw;
+  
+    input {
+      width: 70%;
+      font-size: 1vw;
+      color: #ff9933;
+      background: none;
+      border: none;
+    }
+}
+  
