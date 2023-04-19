@@ -1,5 +1,5 @@
 .icon-storage-container {
-    touch-action: none;
+    touch-action: auto;
     width: 375px;
     height: 100vh;
     background-color: #3d002a;
@@ -25,6 +25,10 @@
     span {
       color: #ff9933;
       font-size: 18px;
+    }
+
+    img {
+        touch-action: none;
     }
 }
 

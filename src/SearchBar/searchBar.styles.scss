@@ -34,7 +34,8 @@
 .search-bar {
     width: 265px;
     padding: 20px 0;
-    gap: 15px;
+    gap: 0px;
+    justify-content: space-evenly;
   
     input {
       width: 75%;

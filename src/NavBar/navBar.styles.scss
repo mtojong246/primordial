@@ -50,22 +50,21 @@ p {
     }
     
     .nav-bar-container div {
-        width: 90px;
-        margin-left: 5px;
+        width: 70px;
+        margin: 0;
         
     }
     
     .nav-bar-container {
-        align-self: flex-end;
         position: absolute;
         bottom: 0px;
         z-index: 1;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
-        gap: 15px;
         padding: 10px 0;
         background-color: #ff9933;
+        width: 100%;
 
         .i, p {
             color: #1a1a1a;
