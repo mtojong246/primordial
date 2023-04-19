@@ -31,14 +31,14 @@ class Encyclopedia extends Component {
                                 <p>discovered items</p>
                             </div>
                             <div className='item-search-container'>
-                                <input type='text' />
-                                <button><FontAwesomeIcon icon={faXmark} id='clear-encyclopedia-search'/></button>
+                                <input type='text' onChange={this.props.onSearchChange} id='enc-search-input'/>
+                                <button onClick={this.props.clearSearch}><FontAwesomeIcon icon={faXmark} id='clear-encyclopedia-search'/></button>
                             </div>
                             {this.props.elements.length === 0 ? (
                                 <h1>Loading...</h1>
                             ) : (
                                 <div className='item-container'>
-                                {this.props.elements.map(icon => (
+                                {this.props.filteredElements.map(icon => (
                                     <div className='item' key={icon.id}>
                                         <img src={icon.image} alt={icon.name} style={{ filter: `${icon.filter}` }}/>
                                         <span>{icon.name}</span>

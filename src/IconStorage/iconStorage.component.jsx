@@ -9,6 +9,7 @@ const success = new Audio(successSound);
 let count = 0;
 let revealed = [];
 
+
 const enterDroppable = (elem) => {
     if (elem.id === 'icon-storage') {
         return;
@@ -27,8 +28,9 @@ const revealedList = (list) => {
     revealed = list;
 }
 
-document.addEventListener('mousedown', function(event) {
-
+document.addEventListener('pointerdown', function(event) {
+    
+    //pointer
     // apply event to all icon elements 
     const target = event.target.closest('.icon');
 
@@ -59,14 +61,19 @@ document.addEventListener('mousedown', function(event) {
     function moveAt(pageX, pageY) {
         draggable.style.left = pageX - draggable.offsetWidth / 2 + 'px';
         draggable.style.top = pageY - draggable.offsetHeight / 2 + 'px';
+        
     }
   
     // move our absolutely positioned ball under the pointer
     moveAt(event.pageX, event.pageY);
 
-    let currentDroppable = null;
+    let currentDroppable = null;   
+    let position = null;
   
-    function onMouseMove(event) {
+    function onPointerMove(event) {
+
+        position = event;
+        
         if (event.target.id === 'html') {
             draggable.classList.add('hide');
         }
@@ -102,24 +109,27 @@ document.addEventListener('mousedown', function(event) {
             enterDroppable(currentDroppable);
             }
         }
+
+        
     }
   
     // move the ball on mousemove
-    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('pointermove', onPointerMove);
   
     // drop the ball, remove unneeded handlers
-    draggable.onmouseup = function(event) {
-        document.removeEventListener('mousemove', onMouseMove);
-
+    draggable.onpointerup = function(event) {
+        document.removeEventListener('pointermove', onPointerMove);
+        
+        
         // hovered over droppable object
         if(currentDroppable) {
+            
 
             let exists = gameData.find(data => data.recipes[currentDroppable.name] === draggable.name) || gameData.find(data => data.recipes[draggable.name] === currentDroppable.name);
 
             // 'trash'
             if (currentDroppable.id === 'icon-storage') {
                 draggable.classList.add('hide');
-
             } else if (exists !== undefined) {
                 currentDroppable.classList.add('hide');
                 draggable.classList.add('hide');
@@ -160,14 +170,77 @@ document.addEventListener('mousedown', function(event) {
                 draggable.classList.add('animate__animated');
                 draggable.classList.add('animate__shakeX');
             }
-        }
+            
+        } 
 
-        draggable.onmouseup = null;
+        draggable.onpointerup = null;
+        draggable.onpointermove = null;
+        
     };
 
     draggable.ondragstart = function() {
         return false;
     };
+
+    if (event.pointerType === 'touch') {
+        document.ontouchend = function() {
+            document.removeEventListener('pointermove', onPointerMove);
+
+            if(currentDroppable) {
+            
+
+                let exists = gameData.find(data => data.recipes[currentDroppable.name] === draggable.name) || gameData.find(data => data.recipes[draggable.name] === currentDroppable.name);
+    
+                // 'trash'
+                if (currentDroppable.id === 'icon-storage') {
+                    draggable.classList.add('hide');
+                } else if (exists !== undefined) {
+                    currentDroppable.classList.add('hide');
+                    draggable.classList.add('hide');
+                    
+                    // if combination exists, add new element to playfield 
+                    let newElement = document.getElementById(exists.name).cloneNode(true);
+                    newElement.id = exists.name + `-clone-${count}`;
+                    newElement.style.position = 'absolute';
+                    newElement.style.zIndex = 1000;
+                    newElement.classList.remove('hide');
+                    newElement.classList.add('droppable');
+                    newElement.classList.add('removable');
+    
+                    // add new element to storage list 
+                    let revealElement = document.getElementById(exists.name);
+                    let revealLabel = document.getElementById(`${exists.name}-span`);
+                    revealElement.classList.remove('hide');
+                    revealLabel.classList.remove('hide');
+    
+                    document.body.append(newElement);
+                    
+                    function moveElement(pageX, pageY) {
+                        newElement.style.left = pageX - newElement.offsetWidth / 2 + 'px';
+                        newElement.style.top = pageY - newElement.offsetHeight / 2 + 'px';
+                    } 
+                
+                    moveElement(position.clientX, position.clientY);
+    
+                    if (!revealed.includes(exists.name)) {
+                        let newIcons = revealed.concat([exists.name]);
+                        success.play();
+    
+                        revealedList(newIcons);
+    
+                    }
+    
+                } else {
+                    draggable.classList.add('animate__animated');
+                    draggable.classList.add('animate__shakeX');
+                }
+                
+            } 
+
+            document.ontouchend = null;
+        }
+    }
+    
 })
 
 

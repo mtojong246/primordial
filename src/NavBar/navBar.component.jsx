@@ -20,6 +20,7 @@ class NavBar extends Component {
             isSettingsOpen: false,
             isEncyclopediaOpen: false,
             elements: [],
+            searchField: '',
         }
     }
  
@@ -59,7 +60,20 @@ class NavBar extends Component {
         this.setState({elements: icons})
     }
 
+    onSearchChange = (event) => {
+        this.setState({searchField: event.target.value})
+    }
+
+    clearSearch = () => {
+        this.setState({searchField: ''})
+        document.getElementById('enc-search-input').value = '';
+        audio.play();
+    }
+
     render () {
+
+        let filteredElements = this.state.elements.filter(element => element.name.toLowerCase().includes(this.state.searchField.toLowerCase()));
+
         return (
             <>
                 <div className="nav-bar-container">
@@ -83,7 +97,7 @@ class NavBar extends Component {
                     </a>
                 </div>
                 {this.state.isSettingsOpen && <Settings openSettings={this.openSettings} cleanUp={this.cleanUp} reset={this.reset} />}
-                {this.state.isEncyclopediaOpen && <Encyclopedia openEncyclopedia={this.openEncyclopedia} elements={this.state.elements}/>}
+                {this.state.isEncyclopediaOpen && <Encyclopedia openEncyclopedia={this.openEncyclopedia} elements={this.state.elements} filteredElements={filteredElements} onSearchChange={this.onSearchChange} clearSearch={this.clearSearch}/>}
             </>
         )
     }
