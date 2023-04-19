@@ -9,23 +9,39 @@
 
     span {
         font-family: 'Pacifico', cursive;
-        font-size: 5vw;
+        font-size: 110px;
         color: #ff9933;
     }
 
     button {
         font-family: sans-serif;
         font-weight: bold;
-        font-size: 1vw;
+        font-size: 24px;
         color: white;
         background-color: #9999ff;
         border-radius: 10px;
-        padding: 1vw 3vw;
+        padding: 24px 68px;
         border: none;
     }
 
     button:hover {
         cursor: pointer;
         background-color: #7f7fd2;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title-container {
+        
+    
+        span {
+            font-size: 50px;
+        }
+    
+        button {
+            font-size: 12px;
+            padding: 12px 34px;
+        }
+    
     }
 }

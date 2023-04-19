@@ -1,20 +1,21 @@
 .nav-bar-container p {
-    font-size: 0.6vw;
+    font-size: 14px;
 }
 
 .nav-bar-container div {
-    width: 4vw;
+    width: 90px;
+    margin-left: 5px;
 }
 
 .nav-bar-container {
     align-self: flex-start;
-    padding-top: 0.5vw;
+    padding-top: 15px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 1.5vw;
+    gap: 35px;
 
     a {
         text-decoration: none;
@@ -27,7 +28,8 @@
 }
   
 .i {
-    font-size: 1.5vw;
+    font-size: 35px;
+    margin-bottom: 5px;
 }
   
 .i:hover {
@@ -40,4 +42,41 @@ p {
 
 .hide {
     display: none;
+}
+
+@media screen and (max-width: 480px) {
+    .nav-bar-container p {
+        font-size: 12px;
+    }
+    
+    .nav-bar-container div {
+        width: 90px;
+        margin-left: 5px;
+        
+    }
+    
+    .nav-bar-container {
+        align-self: flex-end;
+        position: absolute;
+        bottom: 0px;
+        z-index: 1;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 10px 0;
+        background-color: #ff9933;
+
+        .i, p {
+            color: #1a1a1a;
+        }
+    
+    
+    }
+      
+    .i {
+        font-size: 26px;
+        margin-bottom: 5px;
+    }
+      
 }

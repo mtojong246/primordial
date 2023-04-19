@@ -1,5 +1,11 @@
 .playField-container {
     touch-action: none;
-    width: 79vw;
+    width: 550px;
   }
-  
+
+
+@media screen and (max-width: 480px) {
+  .playField-container {
+    width: 280px;
+  }
+}

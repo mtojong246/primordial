@@ -101,3 +101,10 @@
       transform: scale(1);
     }
   }
+
+@media screen and (max-width: 480px) {    
+    .settings-content-container {
+        width: 350px;
+    }
+    
+}
