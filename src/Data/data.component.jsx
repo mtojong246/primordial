@@ -1,14 +1,14 @@
-import Air from '../Icons/wind.svg';
-import Earth from '../Icons/hill.svg';
+import Air from '../Icons/air.png';
+import Earth from '../Icons/earth.png';
 import Fire from '../Icons/fire-icon.svg';
 import Water from '../Icons/water-icon.svg';
 import Dust from '../Icons/dust-icon.svg';
-import Land from '../Icons/land.svg';
-import Lava from '../Icons/lava.svg';
-import Mist from '../Icons/mist.svg';
+import Land from '../Icons/land.png';
+import Lava from '../Icons/lava.png';
+import Mist from '../Icons/mist.png';
 import Mud from '../Icons/footprints.svg';
 import Pressure from '../Icons/speed-test-icon.svg';
-import Puddle from '../Icons/puddle.svg';
+import Puddle from '../Icons/puddle.png';
 import Smoke from '../Icons/smoke.png';
 import Steam from '../Icons/steam-air-icon.svg';
 import Brick from '../Icons/brick.svg';
@@ -26,7 +26,7 @@ import Volcano from '../Icons/volcano.svg';
 import Wind from '../Icons/air.svg';
 import Chimney from '../Icons/chimney.svg';
 import Clay from '../Icons/clay.svg';
-import Energy from '../Icons/energy.svg';
+import Energy from '../Icons/energy.png';
 
 
 
@@ -38,14 +38,14 @@ export const gameData = [
         recipes: {
             fire: 'mist'
         },
-        filter: 'invert(100%) sepia(34%) saturate(0%) hue-rotate(71deg) brightness(105%) contrast(101%)'
+        filter: ''
     },
     {
         id: 2,
         name: 'earth',
         image: Earth,
         recipes: {},
-        filter: 'invert(39%) sepia(59%) saturate(447%) hue-rotate(345deg) brightness(92%) contrast(84%)'
+        filter: ''
     },
     {
         id: 3,

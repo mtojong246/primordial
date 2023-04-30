@@ -9,7 +9,6 @@
   
     display: flex;
     flex-direction: column;
-    gap: 5px;
 
     overflow-y: scroll;
     -ms-overflow-style: none;
@@ -43,7 +42,7 @@
 
   
   
-.air, .mist, .steam, .wind {
+.mist, .steam, .wind {
     filter: invert(100%) sepia(34%) saturate(0%) hue-rotate(71deg) brightness(105%) contrast(101%);
 }
   
@@ -51,7 +50,7 @@
     filter: invert(75%) sepia(30%) saturate(323%) hue-rotate(350deg) brightness(96%) contrast(91%);
 }
   
-.earth, .mud, .earthquake {
+.mud, .earthquake {
     filter: invert(39%) sepia(59%) saturate(447%) hue-rotate(345deg) brightness(92%) contrast(84%);
 }
   
@@ -108,6 +107,7 @@
     .icon-storage-container {
         width: 140px;
         border-left: 5px solid #14000e;
+        height: 93vh;
       
         div {
           gap: 5px;
